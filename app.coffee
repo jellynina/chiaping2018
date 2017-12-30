@@ -12,6 +12,14 @@ dearFrame.style =
 cardArray = null
 currentNumber = 0
 indexOfCards = 0
+cardLength = 0
+
+# Load image
+
+ikeaDoll = new Layer
+	image: 'images/ikea_doll.png'
+	parent: ikea_doll
+
 
 # Creating dyanamic text layer
 dearFont = new TextLayer
@@ -38,16 +46,6 @@ nameFont = new TextLayer
 	fontWeight: 600
 
 	
-# currentNumberText = new TextLayer
-# 	text: indexOfCards
-# 	fontFamily: "-apple-system"
-# 	fontSize: 24
-# 	color: "#0E2137"
-# 	fontWeight: 600
-# 	textAlign: "center"
-# 	width: BtnNo.width
-# 	parent: BtnNo
-# 	point: Align.center
 	
 
 inputNumber = new InputLayer
@@ -55,9 +53,12 @@ inputNumber = new InputLayer
 	multiLine: false
 	text: "NN"
 	parent: BtnNo
+	textAlign: 'center'
+	# 弄不到置中？
 
 inputNumber.onEnterKey ->
 	print inputNumber.value
+	##  新增判斷式判斷卡片長度
 	indexOfCards = parseInt( inputNumber.value, 10 );
 	index = indexOfCards - 1
 	ClearDefault()
@@ -118,7 +119,6 @@ ClearDefault = () ->
 
 NextCard = () ->
 	indexOfCards += 1
-# 	currentNumberText.text = indexOfCards
 	inputNumber.value = indexOfCards
 	index = indexOfCards - 1
 	getCardData(index)
@@ -126,10 +126,15 @@ NextCard = () ->
 PrevCard = () ->
 	if indexOfCards > 1
 		indexOfCards -= 1
-# 		currentNumberText.text = indexOfCards
 		inputNumber.value = indexOfCards
 		index = indexOfCards - 1
 		getCardData(index)	
+
+getCardIndex = () ->
+	DBfire.get "/cards", (cards) ->
+		theArray = _.toArray(cards)
+		print theArray.length
+
 	
 
 getCardData = (dataIndex) ->

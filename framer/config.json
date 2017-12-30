@@ -1,20 +1,20 @@
 {
-  "orientation" : 0,
+  "orientation" : 90,
   "updateDelay" : 0.3,
   "designModeSelected" : 0,
-  "cachedDeviceHeight" : 736,
+  "cachedDeviceHeight" : 1024,
   "contentScale" : 1,
   "fullScreen" : false,
-  "cachedDeviceWidth" : 414,
-  "deviceType" : "apple-iphone-8-plus-space-gray",
+  "cachedDeviceWidth" : 1366,
+  "deviceType" : "apple-ipad-pro-space-gray",
   "sharedPrototype" : 0,
   "propertyPanelToggleStates" : {
     "Filters" : false
   },
   "projectId" : "B8AB1204-B441-4AAD-B8BA-37CFBB1AF880",
-  "deviceOrientation" : 0,
+  "deviceOrientation" : 90,
   "selectedHand" : "",
-  "showBezel" : false,
+  "showBezel" : true,
   "foldedCodeRanges" : [
 
   ],
