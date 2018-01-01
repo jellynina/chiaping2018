@@ -262,12 +262,12 @@ DBfire.get "/ikea" , (words) ->
 
 ikeaNext.onTap (event, layer) ->
 	ikeaIndex += 1
-	print ikeaIndex
+	#print ikeaIndex
 	getIkeaWords(ikeaIndex)
 
 ikeaPrev.onTap (event, layer) ->
 	ikeaIndex -= 1
-	print ikeaIndex
+	#print ikeaIndex
 	getIkeaWords(ikeaIndex)
 
 getIkeaWords = (index) ->
