@@ -1,13 +1,13 @@
 {
   "orientation" : 90,
   "updateDelay" : 0.3,
-  "designModeSelected" : 1,
+  "designModeSelected" : 0,
   "cachedDeviceHeight" : 1024,
   "contentScale" : 1,
   "fullScreen" : false,
   "cachedDeviceWidth" : 1366,
   "deviceType" : "apple-ipad-pro-space-gray",
-  "sharedPrototype" : 0,
+  "sharedPrototype" : true,
   "propertyPanelToggleStates" : {
     "Filters" : false
   },
