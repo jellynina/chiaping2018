@@ -19,7 +19,19 @@ cardLength = 0
 ikeaDoll = new Layer
 	image: 'images/ikea_doll.png'
 	parent: ikea_doll
+icnNext = new Layer
+	image: 'images/icn-next.png'
+	parent: NextBTN
+	height: 34
+	width: 32
+	x: Align.center
 
+icnPrev = new Layer
+	image: 'images/icn-prev.png'
+	parent: PrevBTN
+	height: 34
+	width: 32
+	x: Align.center
 
 # Creating dyanamic text layer
 dearFont = new TextLayer
@@ -53,7 +65,8 @@ inputNumber = new InputLayer
 	multiLine: false
 	text: "NN"
 	parent: BtnNo
-	textAlign: 'center'
+	width: BtnNo.width
+	x: Align.center
 	# 弄不到置中？
 
 inputNumber.onEnterKey ->
