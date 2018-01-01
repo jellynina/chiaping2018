@@ -126,37 +126,38 @@ DBfire.get "/cards", (cards) ->
 	cardLength = theArray.length
 	totalNoOfCard.text = cardLength
 
-inputNumber = new InputLayer
+inputNumber = new TextLayer #InputLayer
 	value: indexOfCards
 	multiLine: false
-	text: "NN"
+	text: "0"
 	parent: BtnNo
 	width: BtnNo.width
 	x: Align.center
+	textAlign: 'center'
 	# 弄不到置中？
 
-inputNumber.onEnterKey ->
-	print inputNumber.value
-	##  新增判斷式判斷卡片長度
-	indexOfCards = parseInt( inputNumber.value, 10 );
-	print isNaN(indexOfCards)
-	if !isNaN(indexOfCards) && 0 < indexOfCards < parseInt(totalNoOfCard.text, 10)
-		index = indexOfCards - 1
-		ClearDefault()
-		getCardData(index)
-	else if !isNaN(indexOfCards) && indexOfCards > parseInt(totalNoOfCard.text, 10)
-		nameFont.text = ''
-		bodyFont.text = "超過惹，沒那麼多卡片捏"
-		dearFont.text = ''
-	else if isNaN(indexOfCards)
-		nameFont.text = ''
-		bodyFont.text = "要輸入數字才可以看到卡片唷！"
-		dearFont.text = ''
-	else
-		nameFont.text = ''
-		bodyFont.text = "不要鬧惹～～～～"
-		dearFont.text = ''
-	
+# inputNumber.onEnterKey ->
+# 	print inputNumber.value
+# 	##  新增判斷式判斷卡片長度
+# 	indexOfCards = parseInt( inputNumber.value, 10 );
+# 	print isNaN(indexOfCards)
+# 	if !isNaN(indexOfCards) && 0 < indexOfCards < parseInt(totalNoOfCard.text, 10)
+# 		index = indexOfCards - 1
+# 		ClearDefault()
+# 		getCardData(index)
+# 	else if !isNaN(indexOfCards) && indexOfCards > parseInt(totalNoOfCard.text, 10)
+# 		nameFont.text = ''
+# 		bodyFont.text = "超過惹，沒那麼多卡片捏"
+# 		dearFont.text = ''
+# 	else if isNaN(indexOfCards)
+# 		nameFont.text = ''
+# 		bodyFont.text = "要輸入數字才可以看到卡片唷！"
+# 		dearFont.text = ''
+# 	else
+# 		nameFont.text = ''
+# 		bodyFont.text = "不要鬧惹～～～～"
+# 		dearFont.text = ''
+# 	
 
 NextBTN.onTap (event, layer) ->
 	ClearDefault()
@@ -219,14 +220,14 @@ ClearDefault = () ->
 
 NextCard = () ->
 	indexOfCards += 1
-	inputNumber.value = indexOfCards
+	inputNumber.text = indexOfCards
 	index = indexOfCards - 1
 	getCardData(index)
 
 PrevCard = () ->
 	if indexOfCards > 1
 		indexOfCards -= 1
-		inputNumber.value = indexOfCards
+		inputNumber.text = indexOfCards
 		index = indexOfCards - 1
 		getCardData(index)	
 
