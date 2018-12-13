@@ -37,3 +37,6 @@
 - Google Form 搜集表單
 - 丟到Firebase
 - FramerJS 撈資料顯示
+
+
+gs 檔案[link](https://script.google.com/home/projects/1392GkqLN1FdBOFyqSLT14wdSai_M-T-FaJTUStwAOXIq2r_m4MBpMaEJ)
